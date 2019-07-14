@@ -3,9 +3,17 @@
 
 ### Quick Start
 install dependency
-``` npm install```
+
+```bash
+npm install
+```
 
 start program
-``` npm start```
+```bash
+npm start
+```
+
 excute test code
-```npm run test```
+```bash
+npm run test
+```
