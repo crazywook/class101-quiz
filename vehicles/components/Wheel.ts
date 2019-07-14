@@ -1,8 +1,10 @@
+import {WheelKind} from "../types";
+
 export class Wheel {
-  kind: string;
+  kind: WheelKind;
   private rpm = 0;
 
-  constructor(kind: string) {
+  constructor(kind: WheelKind) {
     this.kind = kind;
   }
 

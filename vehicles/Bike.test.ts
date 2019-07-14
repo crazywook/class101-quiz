@@ -1,12 +1,11 @@
 import {expect} from "chai";
 
 import {Bike} from "./Bike";
-import {Car} from "./Car";
 import {Wheel} from "./components/Wheel";
 
-describe("Car", () => {
+describe("Bike", () => {
 
-  it("When Car was driven, all wheels rpm is 8", () => {
+  it("When Bike was driven, all wheels rpm is 8", () => {
 
     const bike = new Bike(
       "Bike",
