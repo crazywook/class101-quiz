@@ -14,7 +14,7 @@ describe("Car", () => {
         new Wheel("rubber"),
         new Wheel("rubber"),
         new Wheel("rubber"),
-        new Wheel("ribber"),
+        new Wheel("rubber"),
       ],
       100,
     );
