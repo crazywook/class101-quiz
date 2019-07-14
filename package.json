@@ -2,9 +2,10 @@
   "name": "class101-quiz",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "main.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node main.ts",
+    "test": "TS_NODE_FILES=true mocha --project ./tsconfig.json -r ts-node/register './**/*.test{.ts,.js}'"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,12 @@
   },
   "homepage": "https://github.com/crazywook/class101-quiz#readme",
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
     "ts-node": "^8.3.0",
-    "tslint": "^5.18.0"
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   }
 }

@@ -5,17 +5,15 @@ export class Road {
 
   private vehicles: Vehicle[] = [];
 
-  addVehicles(vehicles: Vehicle[]) {
-    console.log(vehicles);
+  addVehicles(vehicles: Vehicle[]): void {
     this.vehicles.push(...vehicles);
-
   }
 
   isRoadEmpty(): boolean {
     return this.vehicles.length === 0;
   }
 
-  showVehicles() {
-    return this.vehicles.map(v => v.type).join(",");
+  showVehicles(): string {
+    return this.vehicles.map(v => v.getType()).join(",");
   }
 }

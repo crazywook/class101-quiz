@@ -1,6 +1,6 @@
 export class Wheel {
   kind: string;
-  rpm = 0;
+  private rpm = 0;
 
   constructor(kind: string) {
     this.kind = kind;
@@ -8,5 +8,9 @@ export class Wheel {
 
   setNewRPM(r: number) {
     this.rpm = r;
+  }
+
+  getRpm() {
+    return this.rpm;
   }
 }

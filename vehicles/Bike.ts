@@ -7,7 +7,8 @@ export class Bike extends Vehicle<"Bike"> {
   pedal() {
     const numberOfWheels = this.getNumberOfWheels();
     for (let i = 0; i < numberOfWheels; i++) {
-      this.wheels[i].rpm = Bike.START_RPM;
+      const wheels = this.getWheels();
+      wheels[i].setNewRPM(Bike.START_RPM);
     }
   }
 }

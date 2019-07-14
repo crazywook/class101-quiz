@@ -4,8 +4,8 @@ import {VehicleType} from "./types";
 export class Vehicle<T = VehicleType> {
 
   readonly type: T;
-  readonly wheels: Wheel[];
-  private numberOfWheels: number; // bigger than -1
+  private readonly wheels: Wheel[];
+  private readonly numberOfWheels: number; // bigger than -1
   private fuel: number; // 0~100
 
   constructor(type: T, numberOfWheels: number, wheels: Wheel[], fuel: number) {
@@ -45,5 +45,13 @@ export class Vehicle<T = VehicleType> {
 
   getFuel(): number {
     return this.fuel;
+  }
+
+  getType(): T {
+    return this.type;
+  }
+
+  getWheels() {
+    return this.wheels;
   }
 }
