@@ -17,3 +17,7 @@ excute test code(osX)
 ```bash
 npm run test
 ```
+excute test code(window)
+```
+mocha -r ts-node/register ./*/*.test.ts
+```
