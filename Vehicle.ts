@@ -1,16 +1,46 @@
-import { Wheel } from './main';
+import {Wheel} from "./main";
 
-export default class Vehicle {
+export abstract class Vehicle {
+
+  readonly wheels: Wheel[];
   private numberOfWheels: number; // bigger than -1
-  public wheels: Wheel[];
   private fuel: number; // 0~100
 
   constructor(numberOfWheels: number, wheels: Wheel[], fuel: number) {
     this.numberOfWheels = numberOfWheels;
+    this.validateNumOfWheels(numberOfWheels);
+    this.validateWheelsArrayLength(wheels, numberOfWheels);
+    this.validateFuel(fuel);
     this.wheels = wheels;
     this.fuel = fuel;
   }
-  public getNumberOfWheels() { return this.numberOfWheels; }
 
-  public getFuel() {return this.fuel; }
+  validateFuel(fuel: number) {
+    if (fuel < 0 || fuel > 100) {
+      throw new Error("Fuel must have a range 0~100");
+    }
+  }
+
+  validateNumOfWheels(numberOfWheels: number) {
+    if (numberOfWheels < 0 || numberOfWheels % 1 !== 0) {
+      throw new Error("NumberOfWheels must be Natural bigger than -1");
+    }
+  }
+
+  validateWheelsArrayLength(wheels: Wheel[], numberOfWheels: number) {
+    if (!wheels) {
+      throw new Error("Wheel does not exist");
+    }
+    if (wheels.length !== numberOfWheels) {
+      throw new Error("Wheels length is different with numberOfWheels");
+    }
+  }
+
+  getNumberOfWheels() {
+    return this.numberOfWheels;
+  }
+
+  getFuel() {
+    return this.fuel;
+  }
 }

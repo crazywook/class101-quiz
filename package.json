@@ -1,0 +1,23 @@
+{
+  "name": "class101-quiz",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazywook/class101-quiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crazywook/class101-quiz/issues"
+  },
+  "homepage": "https://github.com/crazywook/class101-quiz#readme",
+  "devDependencies": {
+    "tslint": "^5.18.0"
+  }
+}

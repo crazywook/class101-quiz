@@ -1,0 +1,48 @@
+{
+  "defaultSeverity": "error",
+  "linterOptions": {
+    "exclude": [
+      "/**/*.controller.ts",
+      "/**/*.test.ts{,x}",
+      "index.local.ts",
+	  "index.ts",
+	  "font.css",
+	  "/**/*.css"
+    ]
+  },
+  "extends": [
+    "tslint:recommended"
+  ],
+  "jsRules": {},
+  "rules": {
+    "interface-name": false,
+    "member-access": [
+      true,
+      "no-public"
+    ],
+    "ordered-imports": true,
+    "quotemark": [
+      true,
+      "double"
+    ],
+    "object-literal-sort-keys": false,
+    "max-classes-per-file": false,
+    "radix": false,
+    "array-type": [
+      true,
+      "array"
+    ],
+    "jsdoc-format": false,
+    "allow-declarations": [
+      true,
+      "allow-declarations"
+    ],
+    "no-console": false,
+    "no-unused-expression": [
+      true,
+      "allow-fast-null-checks"
+	],
+	"no-reference": false
+  },
+  "rulesDirectory": []
+}
