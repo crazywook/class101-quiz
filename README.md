@@ -13,7 +13,7 @@ start program
 npm start
 ```
 
-excute test code
+excute test code(osX)
 ```bash
 npm run test
 ```
