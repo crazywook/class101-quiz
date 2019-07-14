@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/crazywook/class101-quiz#readme",
   "devDependencies": {
+    "ts-node": "^8.3.0",
     "tslint": "^5.18.0"
   }
 }

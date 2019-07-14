@@ -1,47 +1,11 @@
-import {Vehicle} from "./Vehicle";
-
-export class Wheel {
-  kind: string;
-  rpm = 0;
-
-  constructor(kind: string) {
-    this.kind = kind;
-  }
-
-  setNewRPM(r: number) {
-    this.rpm = r;
-  }
-}
-
-class Car extends Vehicle {
-  // 시동을 켠다
-  run() {
-    for (let i = 0; i < this.getNumberOfWheels(); i++) {
-      this.wheels[i].rpm = 5;
-    }
-  }
-  isRoadEmpty(vehicles: Vehicle[]) {
-    return vehicles.length === 0;
-  }
-}
-
-class Bike extends Vehicle {
-  // 페달을 밟는다
-  start() {
-    for (let i = 0; i < this.getNumberOfWheels(); i++) {
-      this.wheels[i].rpm = 8;
-    }
-  }
-  isRoadEmpty(vehicles: Vehicle[]) {
-    return vehicles.length === 0;
-  }
-}
-
-// ------------
-
-const vehiclesInRoad: Vehicle[] = [];
+import {Road} from "./road/Road";
+import {Bike} from "./vehicles/Bike";
+import {Car} from "./vehicles/Car";
+import {Wheel} from "./vehicles/components/Wheel";
+import {Vehicle} from "./vehicles/Vehicle";
 
 const car = new Car(
+  "Car",
   4,
   [
     new Wheel("rubber"),
@@ -53,6 +17,7 @@ const car = new Car(
 );
 
 const bike = new Bike(
+  "Bike",
   2,
   [
     new Wheel("plastic"),
@@ -61,10 +26,11 @@ const bike = new Bike(
   50,
 );
 
-vehiclesInRoad.push(car);
-vehiclesInRoad.push(bike);
-car.run();
-bike.start();
+const road = new Road();
 
-console.log("All vehicles on road: ", vehiclesInRoad);
-console.log("isEmpty: ", car.isRoadEmpty(vehiclesInRoad));
+road.addVehicles([car, bike]);
+car.drive();
+bike.pedal();
+
+console.log("All vehicles on road: ", road.showVehicles());
+console.log("isEmpty: ", road.isRoadEmpty());

@@ -1,12 +1,15 @@
-import {Wheel} from "./main";
+import {Wheel} from "./components/Wheel";
+import {VehicleType} from "./types";
 
-export abstract class Vehicle {
+export class Vehicle<T = VehicleType> {
 
+  readonly type: T;
   readonly wheels: Wheel[];
   private numberOfWheels: number; // bigger than -1
   private fuel: number; // 0~100
 
-  constructor(numberOfWheels: number, wheels: Wheel[], fuel: number) {
+  constructor(type: T, numberOfWheels: number, wheels: Wheel[], fuel: number) {
+    this.type = type;
     this.numberOfWheels = numberOfWheels;
     this.validateNumOfWheels(numberOfWheels);
     this.validateWheelsArrayLength(wheels, numberOfWheels);
@@ -36,11 +39,11 @@ export abstract class Vehicle {
     }
   }
 
-  getNumberOfWheels() {
+  getNumberOfWheels(): number {
     return this.numberOfWheels;
   }
 
-  getFuel() {
+  getFuel(): number {
     return this.fuel;
   }
 }

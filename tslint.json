@@ -32,6 +32,7 @@
       true,
       "array"
     ],
+    "arrow-parens": false,
     "jsdoc-format": false,
     "allow-declarations": [
       true,
